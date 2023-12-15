@@ -3,7 +3,7 @@ locals {
 }
 
 resource "aws_lambda_layer_version" "this" {
-  for_each                 = var.layers
+  for_each                 = toset(var.layers)
   filename                 = "${local.lambda_layer_dir}/${each.value}/package.zip"
   source_code_hash         = filebase64sha256("${local.lambda_layer_dir}/${each.value}/package.zip")
   layer_name               = each.value
