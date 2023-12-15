@@ -1,10 +1,18 @@
+
+variable "layers" {
+  default = [
+    "aws_embedded_metrics",
+    "boto3_botocore_requests"
+  ]
+}
+
 variable "lambda_layer_dir" {
   type    = string
   default = ""
 }
 
 variable "compatible_runtimes" {
-  default = ["python3.12", "python3.11", "python3.10", "python3.9"]
+  default = ["python3.12", "python3.11"]
 }
 
 variable "compatible_architectures" {
