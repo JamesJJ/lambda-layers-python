@@ -2,8 +2,9 @@
 variable "layers" {
   type = set(string)
   default = [
-    "aws_embedded_metrics",
-    "boto3_botocore_requests"
+    # "aws_embedded_metrics",
+    "boto3_botocore_requests",
+    # "jmespath",
   ]
 }
 
